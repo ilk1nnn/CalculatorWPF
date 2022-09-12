@@ -1,0 +1,150 @@
+﻿<Window x:Class="CalculatorWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorWPF"
+        mc:Ignorable="d"
+        Title="Calculator" Height="510" Width="335">
+
+
+
+    <Grid>
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <WrapPanel HorizontalAlignment="Left">
+                <Image  Width="20" Height="20"
+                       Source="images/menu.png"
+                       Margin="5,6,0,0">
+                </Image>
+                <Label FontSize="20" 
+                       Margin="15,3,0,0">Standart</Label>
+                <Image Width="20" Height="20"
+                       Source="images/history.png"
+                       Margin="290,-35,0,0">
+                </Image>
+            </WrapPanel>
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#CCDBDC" Offset="0.8"></GradientStop>
+                    <GradientStop Color="#9AD1D4"></GradientStop>
+                    <GradientStop Color="#80CED7" Offset="0.1"></GradientStop>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <TextBox Height="70" Margin="0,0,0,0" Name="txtbox" FontSize="50" MaxLength="11"> 
+                </TextBox>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <WrapPanel Margin="0,0,0,0">
+                        <Label FontSize="15" Margin="18,0,0,0">MC</Label>
+                        <Label FontSize="15" Margin="18,0,0,0">MR</Label>
+                        <Label FontSize="15" Margin="18,0,0,0">M+</Label>
+                        <Label FontSize="15" Margin="18,0,0,0">M-</Label>
+                        <Label FontSize="15" Margin="18,0,0,0">MS</Label>
+                        <Label FontSize="15" Margin="18,0,0,0">M^</Label>
+                    </WrapPanel>
+                    
+                </Grid>
+
+
+                <Grid Grid.Row="1">
+                    <Grid.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#CCDBDC" Offset="0.8"></GradientStop>
+                            <GradientStop Color="#9AD1D4"></GradientStop>
+                            <GradientStop Color="#80CED7" Offset="0.1"></GradientStop>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <WrapPanel>
+                            <Button Click="Button_Click_1" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray" Content="AC" FontSize="20" ></Button>
+                            <Button Click="Button_Click_2" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="+/-" FontSize="20"></Button>
+                            <Button Click="PercentBtnClick" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="%" FontSize="20"></Button>
+                            <Button Click="DivideBtnClick" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="/" FontSize="20"></Button>
+                        </WrapPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <WrapPanel>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray" Content="7" FontSize="20" ></Button>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="8" FontSize="20"></Button>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="9" FontSize="20"></Button>
+                            <Button Click="MultBtnClick" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="*" FontSize="25"></Button>
+                        </WrapPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <WrapPanel>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray" Content="4" FontSize="20" ></Button>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="5" FontSize="20"></Button>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="6" FontSize="20"></Button>
+                            <Button Click="MinusBtnClick" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="-" FontSize="25"></Button>
+                        </WrapPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <WrapPanel>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray" Content="1" FontSize="20" ></Button>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="2" FontSize="20"></Button>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="3" FontSize="20"></Button>
+                            <Button Click="PlusBtnClick" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="+" FontSize="25"></Button>
+                        </WrapPanel>
+                    </Grid>
+
+                    <Grid Grid.Row="4">
+                        <WrapPanel>
+                            <Button Click="Button_Click" Margin="8,6,0,0" Width="226" Height="55" Background="LightGray" Content="0" FontSize="20" ></Button>
+                            <Button Click="EqualBtnClick" Margin="8,6,0,0" Width="70" Height="55" Background="LightGray"  Content="=" FontSize="25"></Button>
+                        </WrapPanel>
+                    </Grid>
+
+                </Grid>
+
+
+            </Grid>
+
+
+        </Grid>
+
+
+
+
+
+
+    </Grid>
+
+
+
+</Window>
